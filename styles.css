@@ -1,3 +1,196 @@
-h1 {
-    color:red;
+@font-face {
+    font-family: Andromeda;
+    src: url(../fonts/Andromeda.ttf);
+  }
+
+:root {
+    --main-bg-color: #222222;
+    --main-text-color: #ffffff;
+  }
+
+body {
+    background: linear-gradient(45deg, #141457, #03412d, #0e2349);
+    background-size: 500% 500%;
+    animation: gradientPulse 20s ease infinite;
+    margin: 0;
+    padding: 0;
 }
+
+.stars {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 2px; 
+    height: 2px;
+    animation: twinkle 10s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes gradientPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+main {
+    padding: 0% 15% 0 15%;
+}
+
+h1{
+    padding: 200px 
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#result h2 {
+    font-family: 'Andromeda';
+    color: var(--main-text-color);
+    font-size: 4em;
+}
+
+#result img {
+    width: 200px;
+    height: 200px;
+}
+
+template {
+    display:flex;
+}
+
+/* ----- tutorial https://www.youtube.com/watch?v=Qz_0sSGyyE4 ----- */
+.snowPlanet {
+    position: relative;
+    top:10em;
+    left:5%;
+    width: 15em;
+    height: 15em;
+    box-shadow: inset -1em -1em 1em #0000007f,
+    -0.5em -0.5em 1em #a7f8fb;
+    background-color: rgb(255, 255, 255);
+    /* background: radial-gradient(circle, rgba(228,212,219,1) 0%, rgb(97, 97, 97) 100%);  */
+    border-radius: 50%;
+    animation: hover 10s ease-in-out infinite;
+}
+
+.mountain {
+    position: absolute;
+    top: -10px;
+    left: -60px;
+    width: 80%;
+    height: 40%;
+    rotate: -45deg;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    /* box-shadow: 1em #a7f8fb; */
+    z-index: 0;
+}
+
+.mountain:nth-of-type(2){
+    top: -20px;
+    left: 10px;
+    width: 60%;
+    rotate: -30deg;
+}
+
+.snowboard {
+    position: absolute;
+    width: 2.5em;
+    height: 12em;
+    /* background-color: black; */
+    background-image: url(Images/capita-front.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    top: 10%;
+    left: -5em;
+    border-radius: 60px;
+    animation: orbit 15s ease-in-out infinite;
+    border: none;
+}
+
+
+.snowboard:nth-child(2) {
+    animation-delay: 3s;
+}
+.snowboard:nth-child(3) {
+    animation-delay: 6s;
+}
+.snowboard:nth-child(4) {
+    animation-delay: 9s;
+}
+.snowboard:nth-child(5) {
+    animation-delay: 12s;
+}
+
+@keyframes hover {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 40px;
+    }
+    100% {
+        top: 0px;
+    }
+} 
+
+@keyframes orbit {
+    0% {
+        transform: scaleX(0.2);
+        background-image: url(Images/capita-front.png);
+       
+    }
+    25% {
+        transform: scaleX(1);
+        transform: scale(1.2);
+        background-image: url(Images/capita-front.png);
+    }
+    49% {
+         z-index: 1; 
+         background-image: url(Images/capita-front.png);
+        }
+    50% {
+        left: 17em;
+        z-index: -1;
+        transform: scaleX(0.2);
+        background-image: url(Images/capita-front.png);
+
+    }
+    75%{
+        transform: scaleX(1);
+        transform: scale(0.7);
+        background-image: url(Images/capita-back.png);
+    }
+    99% {
+        z-index: -1;
+        transform: scaleX(0.2);
+        background-image: url(Images/capita-back.png);
+    }
+    100% {         
+        left: -5em;
+        z-index: 1;
+        transform: scaleX(0.2);
+
+}}
+
+footer {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--main-text-color);
+    font-family: 'Andromeda';
+}
+

@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tom van Droffelaar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Ik ben (s)Tom</h1>
-    
-    
-    <script src="script.js"></script>
+    <header>
+        <div class="stars"></div>
+        
+    </header>
+
+    <main>
+        <div id="result">
+            <template>
+                {% for person in persons %}
+                <h2>{{ person.name }}</h2>
+                <!-- <h3>{{ person.nickname }}</h3>
+                <p>{{ person.birthdate | date: '%d-%m-%Y'}}</p> -->
+
+                <!-- <img src="{{ person.avatar }}" alt="{{ person.name }}"> -->
+                {% endfor %}
+            </template> 
+        </div>
+        <div class="snowPlanet">
+            <!-- <div class="mountain"></div> -->
+            <!-- <div class="mountain"></div> -->
+            <div class="snowboard"></div>
+            <div class="snowboard"></div>
+            <div class="snowboard"></div>
+            <div class="snowboard"></div>
+            <div class="snowboard"></div>
+        </div>  
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Tom van Droffelaar</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.min.js"></script>
+    <script type="module" src="script.js"></script>
+
 </body>
 </html>
