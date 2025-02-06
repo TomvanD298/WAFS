@@ -82,6 +82,7 @@ template {
     animation: hover 10s ease-in-out infinite;
 }
 
+
 .mountain {
     position: absolute;
     top: -10px;
@@ -108,7 +109,7 @@ template {
     width: 2.5em;
     height: 12em;
     /* background-color: black; */
-    background-image: url(Images/capita-front.png);
+    background-image: url(../Images/capita-front.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -119,6 +120,7 @@ template {
     animation: orbit 15s ease-in-out infinite;
     border: none;
 }
+
 
 
 .snowboard:nth-child(2) {
@@ -149,34 +151,34 @@ template {
 @keyframes orbit {
     0% {
         transform: scaleX(0.2);
-        background-image: url(Images/capita-front.png);
+        background-image: url(../Images/capita-front.png);
        
     }
     25% {
         transform: scaleX(1);
         transform: scale(1.2);
-        background-image: url(Images/capita-front.png);
+        background-image: url(../Images/capita-front.png);
     }
     49% {
          z-index: 1; 
-         background-image: url(Images/capita-front.png);
+         background-image: url(../Images/capita-front.png);
         }
     50% {
         left: 17em;
         z-index: -1;
         transform: scaleX(0.2);
-        background-image: url(Images/capita-front.png);
+        background-image: url(../Images/capita-front.png);
 
     }
     75%{
         transform: scaleX(1);
         transform: scale(0.7);
-        background-image: url(Images/capita-back.png);
+        background-image: url(../Images/capita-back.png);
     }
     99% {
         z-index: -1;
         transform: scaleX(0.2);
-        background-image: url(Images/capita-back.png);
+        background-image: url(../Images/capita-back.png);
     }
     100% {         
         left: -5em;
