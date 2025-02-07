@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <!-- <div class="stars"></div> -->
+        <div class="stars"></div>
         <div class="loader"> 
             <div class="rocket"></div>
             <div class="break"></div>
@@ -25,21 +25,49 @@
                 {% for person in persons %}
                 <h2>{{ person.name }}</h2>
                 <!-- <h3>{{ person.nickname }}</h3>
-                <p>{{ person.birthdate | date: '%d-%m-%Y'}}</p> -->
+                <p>{{ person.birthdate | date: '%d-%m-%Y'}}</p>
 
-                <!-- <img src="{{ person.avatar }}" alt="{{ person.name }}"> -->
+                <img src="{{ person.avatar }}" alt="{{ person.name }}"> -->
                 {% endfor %}
             </template> 
         </div>
-        <div class="snowPlanet">
-            <!-- <div class="mountain"></div> -->
-            <!-- <div class="mountain"></div> -->
-            <div class="snowboard"></div>
-            <div class="snowboard"></div>
-            <div class="snowboard"></div>
-            <div class="snowboard"></div>
-            <div class="snowboard"></div>
-        </div>  
+
+        <section>
+            <div id="wispo">
+                <img class="snowPlanet" src="../images/Snow.png" alt="Snow">
+                <div class="snowboard"></div>
+                <div class="snowboard"></div>
+                <div class="snowboard"></div>
+                <div class="snowboard"></div>
+                <div class="snowboard"></div>
+            </div> 
+            <p>Hoi ik ben tom en ik woon in Roemenië</p>
+        </section>
+        
+        <section>
+            <p>Hoi ik ben tom en ik woon in Roemenië</p>
+            <div id="muziek">
+                <img id="vinyl" src="../images/vinyl.png" alt="Vinyl">
+                <button id="playButton">Play</button>
+            </div>
+            <canvas id="visualizer"></canvas>
+            <audio id="audio" src="../audio/Rock.mp3"></audio>
+        </section>
+
+        <section>
+            <p>Hoi ik ben tom en ik woon in Roemenië</p>
+            <img id="planet" src="../images/earth.png" alt="earth">
+        </section>
+
+        <section>
+        </section>
+
+        <section>
+        </section>
+
+
+
+        
     </main>
 
     <footer>

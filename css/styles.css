@@ -2,11 +2,20 @@
     font-family: Andromeda;
     src: url(../fonts/Andromeda.ttf);
   }
+@font-face {
+    font-family: MegaTrans;
+    src: url(../fonts/Megatrans.otf);
+  }
+
 
 :root {
     --main-bg-color: #222222;
     --main-text-color: #ffffff;
   }
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: linear-gradient(45deg, #141457, #03412d, #0e2349);
@@ -14,6 +23,10 @@ body {
     animation: gradientPulse 20s ease infinite;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    height: 300vh;
+    color: white;
+    font-family: MegaTrans;
 }
 
 .stars {
@@ -23,7 +36,7 @@ body {
     width: 2px; 
     height: 2px;
     animation: twinkle 10s infinite alternate;
-    z-index: -1;
+    z-index: -10;
 }
 
 @keyframes twinkle {
@@ -67,73 +80,66 @@ template {
     display:flex;
 }
 
+section {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    height: 70vh;
+}
+
+section p {
+    width: 30vw;
+    margin-top: 10em;
+}
+
 /* ----- tutorial https://www.youtube.com/watch?v=Qz_0sSGyyE4 ----- */
-.snowPlanet {
+#wispo {
     position: relative;
-    top:10em;
-    left:5%;
-    width: 15em;
-    height: 15em;
-    box-shadow: inset -1em -1em 1em #0000007f,
-    -0.5em -0.5em 1em #a7f8fb;
-    background-color: rgb(255, 255, 255);
-    /* background: radial-gradient(circle, rgba(228,212,219,1) 0%, rgb(97, 97, 97) 100%);  */
-    border-radius: 50%;
     animation: hover 10s ease-in-out infinite;
+    width: 70%;
 }
 
-
-.mountain {
+.snowPlanet {
     position: absolute;
-    top: -10px;
-    left: -60px;
-    width: 80%;
-    height: 40%;
-    rotate: -45deg;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50%;
-    clip-path: polygon(50% 0, 0 100%, 100% 100%);
-    /* box-shadow: 1em #a7f8fb; */
-    z-index: 0;
-}
-
-.mountain:nth-of-type(2){
-    top: -20px;
-    left: 10px;
-    width: 60%;
-    rotate: -30deg;
+    width: 25em;
+    height: 25em;
+    background-image: url(../images/Snow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    /* -webkit-filter: drop-shadow(-5px -5px 5px  #03d2ee); 
+    filter: drop-shadow(-5px -5px 5px  #06f7ff); */
+    animation: rotateBack 30s linear infinite;
 }
 
 .snowboard {
     position: absolute;
-    width: 2.5em;
-    height: 12em;
+    width: 5em;
+    height: 24em;
     /* background-color: black; */
-    background-image: url(../Images/capita-front.png);
+    background-image: url(../images/capita-front.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size:cover;
-    top: 10%;
-    left: -5em;
+    margin-top: 20px;
+    left: -5em; 
     border-radius: 60px;
     animation: orbit 15s ease-in-out infinite;
     border: none;
 }
 
-
-
 .snowboard:nth-child(2) {
-    animation-delay: 3s;
+    animation-delay: -3s;
 }
 .snowboard:nth-child(3) {
-    animation-delay: 6s;
+    animation-delay: -6s;
 }
 .snowboard:nth-child(4) {
-    animation-delay: 9s;
+    animation-delay: -9s;
 }
 .snowboard:nth-child(5) {
-    animation-delay: 12s;
+    animation-delay: -12s;
 }
 
 @keyframes hover {
@@ -148,44 +154,118 @@ template {
     }
 } 
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 2s linear infinite;
+  }
+
+@keyframes rotateBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 @keyframes orbit {
     0% {
-        transform: scaleX(0.2);
-        background-image: url(../Images/capita-front.png);
+        transform: scaleX(0.1);
+        background-image: url(../images/capita-front.png);
        
     }
     25% {
         transform: scaleX(1);
         transform: scale(1.2);
-        background-image: url(../Images/capita-front.png);
     }
     49% {
          z-index: 1; 
-         background-image: url(../Images/capita-front.png);
-        }
+    }
     50% {
-        left: 17em;
+        left: 25em;
         z-index: -1;
-        transform: scaleX(0.2);
-        background-image: url(../Images/capita-front.png);
+        transform: scaleX(0.1);
+        background-image: url(../images/capita-front.png);
+    }
+    65%{
+        background-image: url(../images/capita-back.png);
 
     }
     75%{
         transform: scaleX(1);
         transform: scale(0.7);
-        background-image: url(../Images/capita-back.png);
+        background-image: url(../images/capita-back.png);
     }
     99% {
         z-index: -1;
-        transform: scaleX(0.2);
-        background-image: url(../Images/capita-back.png);
+        transform: scaleX(0.1);
+        background-image: url(../images/capita-back.png);
     }
     100% {         
         left: -5em;
         z-index: 1;
-        transform: scaleX(0.2);
+        transform: scaleX(0.1);
 
 }}
+
+#muziek {
+    position: relative;
+    right: -9em;
+    top: 10em;
+}
+
+#muziek button {
+    position: absolute; 
+    top: 11em;
+    left: 10em;
+    z-index: 0;
+}
+
+
+#vinyl {
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    z-index: 0;
+}
+
+.audio {
+    position: absolute; 
+    top: 1em;
+    left: 1em;
+    z-index: 0;
+}
+
+
+canvas {
+    display: block;
+    margin: 20px auto;
+    /* background: #111; */
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+    /* filter: drop-shadow(0 0 10px #ff00ff); */
+  }
+  
+
+
+#planet {
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    left: 15em;
+    z-index: 0;
+    animation: rotate 30s linear infinite;
+}
+
 
 footer {
     text-align: center;
@@ -196,3 +276,16 @@ footer {
     font-family: 'Andromeda';
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        height: 200vh;
+    }
+    section {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    section p {     
+        width: 100vw;   
+    }
+}
