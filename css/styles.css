@@ -103,7 +103,7 @@ section p {
     position: absolute;
     width: 25em;
     height: 25em;
-    background-image: url(../images/Snow.png);
+    background-image: url(../imgs/Snow.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -117,7 +117,7 @@ section p {
     width: 5em;
     height: 24em;
     /* background-color: black; */
-    background-image: url(../images/capita-front.png);
+    background-image: url(../imgs/capita-front.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -179,7 +179,7 @@ section p {
 @keyframes orbit {
     0% {
         transform: scaleX(0.1);
-        background-image: url(../images/capita-front.png);
+        background-image: url(../imgs/capita-front.png);
        
     }
     25% {
@@ -193,21 +193,21 @@ section p {
         left: 25em;
         z-index: -1;
         transform: scaleX(0.1);
-        background-image: url(../images/capita-front.png);
+        background-image: url(../imgs/capita-front.png);
     }
     65%{
-        background-image: url(../images/capita-back.png);
+        background-image: url(../imgs/capita-back.png);
 
     }
     75%{
         transform: scaleX(1);
         transform: scale(0.7);
-        background-image: url(../images/capita-back.png);
+        background-image: url(../imgs/capita-back.png);
     }
     99% {
         z-index: -1;
         transform: scaleX(0.1);
-        background-image: url(../images/capita-back.png);
+        background-image: url(../imgs/capita-back.png);
     }
     100% {         
         left: -5em;
