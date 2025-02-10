@@ -216,13 +216,13 @@ section p {
 
 }}
 
-#muziek {
+#music {
     position: relative;
     right: -9em;
     top: 10em;
 }
 
-#muziek button {
+#music button {
     position: absolute; 
     top: 11em;
     left: 10em;

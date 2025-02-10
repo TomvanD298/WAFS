@@ -46,9 +46,12 @@
         
         <section>
             <p>Hoi ik ben tom en ik woon in Roemenië</p>
-            <div id="muziek">
+            <div id="music">
                 <img id="vinyl" src="imgs/vinyl.png" alt="Vinyl">
                 <button id="playButton">Play</button>
+                <audio>
+                    <source src="audio/Highway.mp3" type="audio/mpeg">
+                </audio>
             </div>
             <canvas id="visualizer"></canvas>
         </section>
@@ -57,15 +60,6 @@
             <p>Hoi ik ben tom en ik woon in Roemenië</p>
             <img id="planet" src="imgs/earth.png" alt="earth">
         </section>
-
-        <section>
-        </section>
-
-        <section>
-        </section>
-
-
-
         
     </main>
 
@@ -73,7 +67,9 @@
         <p>&copy; 2025 - Tom van Droffelaar</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.min.js"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/loader.js"></script>
+    <script type="module" src="./js/api.js"></script>
 
 </body>
 </html>
