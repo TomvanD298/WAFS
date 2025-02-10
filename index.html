@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,25 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/loader.css">
 </head>
+
 <body>
     <header>
         <div class="stars"></div>
-        <div class="loader"> 
-            <div class="rocket"></div>  
-            <div class="break"></div>
-            <p>Loading</p>
-            <span class="dots"></span>
-        </div>
-        
+        <!-- <div class="loader"> 
+                <div class="rocket"></div>  
+                <div class="break"></div>
+                <p>Loading</p>
+                <span class="dots"></span>
+            </div> -->
+
     </header>
 
     <main>
-        <img id="easterEgg" src="imgs/ea.png" alt="easter egg">
+        <img class="easterEgg" src="imgs/ea.png" alt="easter egg">
+        <div class="hide">
+            <p>Iets met een Guilty pleasure?</p>
+            <p>Maar ik zeg niet wat :)</p>
+        </div>
         <div id="result">
             <template>
                 {% for person in persons %}
@@ -30,7 +36,7 @@
 
                 <img src="{{ person.avatar }}" alt="{{ person.name }}"> -->
                 {% endfor %}
-            </template> 
+            </template>
         </div>
 
         <section>
@@ -41,10 +47,10 @@
                 <div class="snowboard"></div>
                 <div class="snowboard"></div>
                 <div class="snowboard"></div>
-            </div> 
+            </div>
             <p>Hoi ik ben tom en ik woon in Roemenië</p>
         </section>
-        
+
         <section>
             <p>Hoi ik ben tom en ik woon in Roemenië</p>
             <div id="music">
@@ -56,21 +62,24 @@
                 <canvas id="visualizer"></canvas>
                 <div id="needle">
                     <div></div>
-                    <!-- <div></div>
-                    <div></div> -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
-            
+
         </section>
 
         <section>
-        <div id="dailyPlanet">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>   
-            <img src="imgs/ Supes.png" alt="Superman">   
+            <div id="dailyPlanet">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <img src="imgs/superman.png" alt="Superman">
+                <img src="imgs/spiderman.png" alt="Spiderman">
                 <h2>
                     <span>t</span>
                     <span>h</span>
@@ -99,18 +108,18 @@
                     <span>l</span>
                     <span>y</span>
                     <span> </span>
-                    <span>p</span>
+                    <span>b</span>
+                    <span>u</span>
+                    <span>g</span>
                     <span>l</span>
-                    <span>a</span>
-                    <span>n</span>
                     <span>e</span>
-                    <span>t</span>
+                    <span></span>
                 </h2>
             </div>
-           
+
         </section>
 
-        
+
     </main>
 
     <footer>
@@ -121,4 +130,5 @@
     <script type="module" src="./js/loader.js"></script>
     <script type="module" src="./js/api.js"></script>
 </body>
+
 </html>

@@ -1,37 +1,51 @@
 /// ------ Play the music ------ ///
 
 const playButton = document.getElementById("playButton");
-const easterEgg = document.getElementById("easterEgg");
+const easterEgg = document.querySelector(".easterEgg");
 const vinyl = document.getElementById("vinyl");
+const needle = document.getElementById("needle")
 const canvas = document.getElementById("visualizer");
 const canvasContext = canvas.getContext("2d");
 
-const audio = new Audio("./audio/Highway.mp3");
+const highwayAudio = new Audio("./audio/Highway.mp3");
 const eaAudio = new Audio("./audio/Great.mp3");
 
+const vinylImg = document.getElementById("vinyl");
 
-let current = audio;
+
+let current = highwayAudio;
 
 easterEgg.addEventListener("click", () => {
-current = eaAudio;
-console.log("liedje geswapt");
+  if (current == eaAudio) {
+    current = highwayAudio;
+    vinylImg.src = "../imgs/vinyl.png";
+    console.log("Highway");
+  } else {
+    current = eaAudio;
+    vinylImg.src = "../imgs/show.png";
+    console.log("Show");
+  }
 });
 
 let isPlaying = false;
 
 playButton.addEventListener("click", () => {
   if (isPlaying) {
-    audio.pause();
-    current.pause();
+    highwayAudio.pause();
+    eaAudio.pause();
     playButton.textContent = "Play";
     vinyl.classList.remove("rotate");
+    needle.classList.remove("needleDrop");
+    needle.classList.add("needleUp");
     console.log("speelt niet af");
   } else {
     current.play();
     playButton.textContent = "Pause";
     vinyl.classList.add("rotate");
+    needle.classList.remove("needleUp");
+    needle.classList.add("needleDrop");
     console.log("speelt af");
-visualizeAudio();
+    visualizeAudio();
 
   }
   isPlaying = !isPlaying;
@@ -49,6 +63,8 @@ let audioContext;
 let analyser;
 let source;
 
+
+
 function visualizeAudio() {
   if (!audioContext) {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -63,6 +79,17 @@ function visualizeAudio() {
 
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
+
+  let lightBlue = 'rgb(32, 203, 229)';
+  let lightRed = 'rgb(159, 32, 37)';
+
+  let currentColor
+
+  if(current = highwayAudio ) {
+    currentColor = lightRed
+  } else {
+    currentColor = lightBlue
+  }
 
   function draw() {
     canvas.width = canvas.clientWidth;
@@ -88,7 +115,7 @@ function visualizeAudio() {
       canvasContext.beginPath();
       canvasContext.moveTo(xStart, yStart);
       canvasContext.lineTo(xEnd, yEnd);
-      canvasContext.strokeStyle = 'rgb(159, 32, 37)';
+      canvasContext.strokeStyle = lightRed;
       canvasContext.lineWidth = 7;
       canvasContext.stroke();
     }

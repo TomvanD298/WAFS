@@ -1,19 +1,30 @@
 @font-face {
     font-family: Andromeda;
     src: url(../fonts/Andromeda.ttf);
-  }
+}
+
 @font-face {
     font-family: MegaTrans;
     src: url(../fonts/Megatrans.otf);
-  }
+}
+
+@font-face {
+    font-family: Spiderman;
+    src: url(../fonts/Newspaper.ttf);
+}
 
 
 :root {
     --main-bg-color: #222222;
     --main-text-color: #ffffff;
     --main-gold: #BBA53D;
+    --daily-bugle: #d83f3f;
 
-  }
+    --vinyl-needle-light: #999999;
+    --vinyl-needle-dark: #222222;
+    
+
+}
 
 html {
     scroll-behavior: smooth;
@@ -35,22 +46,38 @@ body {
     position: absolute;
     background-color: white;
     border-radius: 50%;
-    width: 2px; 
+    width: 2px;
     height: 2px;
     animation: twinkle 6s infinite alternate;
     z-index: -10;
 }
 
 @keyframes twinkle {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes gradientPulse {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
@@ -58,43 +85,88 @@ main {
     padding: 0% 15% 0 15%;
 }
 
-h1{
-    padding: 200px 
+h1 {
+    padding: 200px
 }
 
-#easterEgg {
-    position: absolute;
-    bottom:-1500px;
+.easterEgg {
+    position:absolute;
+    bottom: -1500px;
     right: 0px;
     width: 40px;
     height: 40px;
 }
 
-#easterEgg:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+/* #easterEgg:hover {
+    animation: shake 1s infinite;
+} */
 
-}
+.hide {
+    position: absolute;
+    display: none;
+    bottom: -1600px;
+    right: 20px;
+  }
+      
+.easterEgg:hover + .hide {
+    display: block;
+    animation: shake 1s infinite;
+  }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
 
 #result {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 #result h2 {
     font-family: 'Andromeda';
     color: var(--main-text-color);
@@ -107,7 +179,7 @@ h1{
 }
 
 template {
-    display:flex;
+    display: flex;
 }
 
 section {
@@ -140,7 +212,7 @@ section p {
     background-image: url(../imgs/Snow.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size:cover;
+    background-size: cover;
     /* -webkit-filter: drop-shadow(-5px -5px 5px  #03d2ee); 
     filter: drop-shadow(-5px -5px 5px  #06f7ff); */
     animation: rotateBack 30s linear infinite;
@@ -148,16 +220,16 @@ section p {
 
 .snowboard {
     position: absolute;
-    width: 5em;
-    height: 24em;
+   height: 15em;
+   aspect-ratio: 1/5;
     /* background-color: black; */
     background-image: url(../imgs/capita-front.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size:cover;
-    margin-top: 20px;
-    left: -5em; 
+    background-size: cover;
+    margin-top: 60px;
+    left: -5em;
     border-radius: 60px;
     animation: orbit 15s ease-in-out infinite;
     border: none;
@@ -166,12 +238,15 @@ section p {
 .snowboard:nth-child(2) {
     animation-delay: -3s;
 }
+
 .snowboard:nth-child(3) {
     animation-delay: -6s;
 }
+
 .snowboard:nth-child(4) {
     animation-delay: -9s;
 }
+
 .snowboard:nth-child(5) {
     animation-delay: -12s;
 }
@@ -180,18 +255,21 @@ section p {
     0% {
         top: 0px;
     }
+
     50% {
         top: 40px;
     }
+
     100% {
         top: 0px;
     }
-} 
+}
 
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -199,12 +277,13 @@ section p {
 
 .rotate {
     animation: rotate 2s linear infinite;
-  }
+}
 
 @keyframes rotateBack {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(-360deg);
     }
@@ -214,41 +293,49 @@ section p {
     0% {
         transform: scaleX(0.1);
         background-image: url(../imgs/capita-front.png);
-       
+
     }
+
     25% {
         transform: scaleX(1);
         transform: scale(1.2);
     }
+
     49% {
-         z-index: 1; 
+        z-index: 1;
     }
+
     50% {
         left: 25em;
         z-index: -1;
         transform: scaleX(0.1);
         background-image: url(../imgs/capita-front.png);
     }
-    65%{
+
+    65% {
         background-image: url(../imgs/capita-back.png);
 
     }
-    75%{
+
+    75% {
         transform: scaleX(1);
         transform: scale(0.7);
         background-image: url(../imgs/capita-back.png);
     }
+
     99% {
         z-index: -1;
         transform: scaleX(0.1);
         background-image: url(../imgs/capita-back.png);
     }
-    100% {         
+
+    100% {
         left: -5em;
         z-index: 1;
         transform: scaleX(0.1);
 
-}}
+    }
+}
 
 /* ------------------------------------------------------------------------------------ */
 /* ----------------------------         Music        ---------------------------------- */
@@ -257,12 +344,12 @@ section p {
 #music {
     position: relative;
     right: -9em;
-    display:grid;
-    place-items:center;
+    display: grid;
+    place-items: center;
 }
 
 #music button {
-    position: absolute; 
+    position: absolute;
     z-index: 0;
 }
 
@@ -275,7 +362,7 @@ section p {
 }
 
 .audio {
-    position: absolute; 
+    position: absolute;
     z-index: 0;
 }
 
@@ -285,27 +372,100 @@ section p {
     width: 600px;
     height: 600px;
 }
- #needle {
+
+#needle {
     position: absolute;
-    display:grid;
-    place-items:center;
- }
-
-
-/* #needle div:nth-of-type(1){
-    background-color: #222222;
-    width: 30em;
-    height: 2em;
-    transform: translateY(-50px);
+    display: grid;
+    place-items: center;
+    transform-style: preserve-3d;
+    transform-origin: top;
+    right: 5em;
+    top: 5em;
+    rotate: -90deg;
 }
 
-#needle div:nth-of-type(2){
-    clip-path: polygon(65% 32%, 80% 39%, 86% 51%, 86% 74%, 23% 75%, 23% 32%);
-    background-color: white;
+#needle div:nth-of-type(1) {
+    position: absolute;
+    width: 5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, black, var(--vinyl-needle-dark));
+}
+
+#needle div:nth-of-type(2) {
+    position: absolute;
+    background-image: linear-gradient(180deg, black, var(--vinyl-needle-light));
+    width: 25em;
+    height: 1em;
+    transform:
+        translateX(-8em);
+}
+
+#needle div:nth-of-type(3) {
+    position: absolute;
+    clip-path: polygon(81% 78%, 15% 78%, 15% 60%, 19% 51%, 24% 47%, 33% 44%, 81% 44%);
+    background-image: linear-gradient(180deg, black, var(--vinyl-needle-dark));
     width: 5em;
     height: 5em;
-    transform: translateY(50px);
-} */
+    transform:
+        scaleX(-1) rotate(-180deg) translateX(-20em) translateY(-0.5em);
+
+}
+
+#needle div:nth-of-type(4) {
+    position: absolute;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-image: linear-gradient(180deg, white, var(--vinyl-needle-light));
+    width: 0.4em;
+    height: 2em;
+    transform:
+        translateX(-21em) translateY(-1em);
+    z-index: -1;
+}
+
+#needle div:nth-of-type(5) {
+    position: absolute;
+    width: 6em;
+    height: 4em;
+    border-radius: 60px;
+    background-image: linear-gradient(180deg, black, var(--vinyl-needle-dark));
+    transform:
+        translateX(6em);
+}
+
+
+@keyframes needleDrop {
+    0% {
+        rotate: -90deg;
+    }
+
+    100% {
+
+        rotate: -70deg;
+    }
+}
+
+@keyframes needleUp {
+    0% {
+        rotate: -70deg;
+    }
+
+    100% {
+
+        rotate: -90deg;
+    }
+}
+
+.needleDrop {
+    animation: needleDrop 2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.needleUp {
+    animation: needleUp 2s ease-out;
+    animation-fill-mode: forwards;
+}
+
 
 
 
@@ -314,37 +474,52 @@ section p {
 /* ----------------------------   The Daily Planet   ---------------------------------- */
 /* ------------------------------------------------------------------------------------ */
 
-#dailyPlanet  {
+#dailyPlanet {
     position: relative;
     width: 20em;
     height: 20em;
-    background-image: radial-gradient(circle at 33% 33%, var(--main-gold),black);
+    background-image: radial-gradient(circle at 33% 33%, var(--main-gold), black);
     border-radius: 50%;
-    display:grid;
-    place-items:center;
+    display: grid;
+    place-items: center;
     transform-style: preserve-3d;
     perspective: 40em;
-}  
+}
 
 #dailyPlanet img {
     position: absolute;
     width: 40px;
-    transform-style: preserve-3d;
-    animation: superman  10s linear infinite ;
+    animation: superman 10s linear infinite;
+}
+
+#dailyPlanet img:nth-of-type(2) {
+    position: absolute;
+    width: 40px;
+    animation: spiderman 10s linear infinite;
+    animation-delay: -5s;
 }
 
 @keyframes superman {
     0% {
-        transform: 
-            rotateX(0deg) 
-            rotateY(0deg) 
-            translateZ(12rem)
+        transform:
+            translateY(4rem) rotateX(30deg) rotateY(0deg) translateZ(13rem);
     }
+
     100% {
-        transform: 
-            rotateX(360deg) 
-            rotateY(360deg) 
-            translateZ(12rem)
+        transform:
+            translateY(4rem) rotateX(30deg) rotateY(360deg) translateZ(13rem);
+    }
+}
+
+@keyframes spiderman {
+    0% {
+        transform:
+        translateY(-1rem) rotateX(10deg) rotateY(0deg) translateZ(13rem);
+    }
+
+    100% {
+        transform:
+        translateY(-1rem) rotateX(10deg) rotateY(360deg) translateZ(13rem);
     }
 }
 
@@ -353,51 +528,52 @@ section p {
     position: absolute;
     width: 25em;
     height: 25em;
-    background-image: 
-        radial-gradient(
-            transparent 11em, 
+    background-image:
+        radial-gradient(transparent 11em,
             var(--ring) 0 var(--ringR),
-            transparent 0 var(--ringR)
-        );
+            transparent 0 var(--ringR));
 
-    transform: 
-        rotateX(70deg)
-        translateZ( var(--tZ, 0) );
+    transform:
+        rotateX(70deg) translateZ(var(--tZ, 0));
     border-radius: 50%;
 }
 
 #dailyPlanet h2 {
     transform-style: preserve-3d;
-    display:grid;
-    place-items:center;
+    display: grid;
+    place-items: center;
 }
 
 #dailyPlanet div:nth-child(1) {
-    --tZ:.2em;
-    --ring:var(--main-gold);
-    --ringR:12.3em;
-}
-#dailyPlanet div:nth-child(2) {
-    --tZ:.1em;
-    --ring:var(--main-gold);
-    --ringR:12.4em;
-}
-#dailyPlanet div:nth-child(3) {
-    --ring:var(--main-gold);
-    --ringR:12.5em;
-}
-#dailyPlanet div:nth-child(4) {
-    --tZ:-.1em;
-    --ring:var(--main-gold);
-    --ringR:12.4em;
-}
-#dailyPlanet div:nth-child(5) {
-    --tZ:-.2em;
-    --ring:var(--main-gold);
-    --ringR:12.3em;
+    --tZ: .2em;
+    --ring: var(--main-gold);
+    --ringR: 12.3em;
 }
 
-#dailyPlanet span{
+#dailyPlanet div:nth-child(2) {
+    --tZ: .1em;
+    --ring: var(--main-gold);
+    --ringR: 12.4em;
+}
+
+#dailyPlanet div:nth-child(3) {
+    --ring: var(--main-gold);
+    --ringR: 12.5em;
+}
+
+#dailyPlanet div:nth-child(4) {
+    --tZ: -.1em;
+    --ring: var(--main-gold);
+    --ringR: 12.4em;
+}
+
+#dailyPlanet div:nth-child(5) {
+    --tZ: -.2em;
+    --ring: var(--main-gold);
+    --ringR: 12.3em;
+}
+
+#dailyPlanet span {
     position: absolute;
     text-transform: uppercase;
     font-size: 1.3em;
@@ -405,118 +581,153 @@ section p {
     box-shadow: black;
 }
 
+#dailyPlanet span{
+    color: var(--daily-bugle)   ;
+    font-family: Spiderman;
+}
+#dailyPlanet span:nth-last-of-type(n+17){
+    color: white;
+}
+
+
 #dailyPlanet span:nth-child(1) {
     animation-delay: -40s;
 }
+
 #dailyPlanet span:nth-child(2) {
     animation-delay: -39s;
 }
+
 #dailyPlanet span:nth-child(3) {
     animation-delay: -38s;
 }
+
 #dailyPlanet span:nth-child(4) {
     animation-delay: -37s;
 }
+
 #dailyPlanet span:nth-child(5) {
     animation-delay: -36s;
 }
+
 #dailyPlanet span:nth-child(6) {
     animation-delay: -35s;
 }
+
 #dailyPlanet span:nth-child(7) {
     animation-delay: -34s;
 }
+
 #dailyPlanet span:nth-child(8) {
     animation-delay: -33s;
 }
+
 #dailyPlanet span:nth-child(9) {
     animation-delay: -32s;
 }
+
 #dailyPlanet span:nth-child(10) {
     animation-delay: -31s;
 }
+
 #dailyPlanet span:nth-child(11) {
     animation-delay: -30s;
-}   
+}
+
 #dailyPlanet span:nth-child(12) {
     animation-delay: -29s;
-}   
+}
+
 #dailyPlanet span:nth-child(13) {
     animation-delay: -28s;
-}   
+}
+
 #dailyPlanet span:nth-child(14) {
     animation-delay: -27s;
-}  
+}
+
 #dailyPlanet span:nth-child(15) {
     animation-delay: -26s;
-}  
+}
+
 #dailyPlanet span:nth-child(16) {
     animation-delay: -25s;
-}  
+}
+
 #dailyPlanet span:nth-child(17) {
     animation-delay: -16s;
 }
+
 #dailyPlanet span:nth-child(18) {
     animation-delay: -15s;
 }
+
 #dailyPlanet span:nth-child(19) {
     animation-delay: -14s;
 }
+
 #dailyPlanet span:nth-child(20) {
     animation-delay: -13s;
 }
+
 #dailyPlanet span:nth-child(21) {
     animation-delay: -12s;
 }
+
 #dailyPlanet span:nth-child(22) {
     animation-delay: -11s;
 }
+
 #dailyPlanet span:nth-child(23) {
     animation-delay: -10s;
 }
+
 #dailyPlanet span:nth-child(24) {
     animation-delay: -9s;
 }
+
 #dailyPlanet span:nth-child(25) {
     animation-delay: -8s;
 }
+
 #dailyPlanet span:nth-child(26) {
     animation-delay: -7s;
 }
+
 #dailyPlanet span:nth-child(27) {
     animation-delay: -6s;
-}   
+}
+
 #dailyPlanet span:nth-child(28) {
     animation-delay: -5s;
-}   
+}
+
 #dailyPlanet span:nth-child(29) {
     animation-delay: -4s;
-}   
+}
+
 #dailyPlanet span:nth-child(30) {
     animation-delay: -3s;
-}  
+}
+
 #dailyPlanet span:nth-child(31) {
     animation-delay: -2s;
-}  
+}
+
 #dailyPlanet span:nth-child(32) {
     animation-delay: -1s;
-}  
+}
 
 
 @keyframes textOrbit {
     0% {
-        transform: 
-            translateY(-1.3rem)
-            rotateX(-20deg)
-            rotateY(0deg)
-            translateZ(12rem);
+        transform:
+            translateY(-0.7rem) rotateX(-20deg) rotateY(0deg) translateZ(12rem);
     }
+
     100% {
-        transform: 
-            translateY(-1.3rem)
-            rotateX(-20deg)
-            rotateY(-360deg)
-            translateZ(12rem);
+        transform:
+            translateY(-0.7rem) rotateX(-20deg) rotateY(-360deg) translateZ(12rem);
     }
 }
 
@@ -535,12 +746,14 @@ footer {
     body {
         height: 200vh;
     }
+
     section {
         flex-direction: column;
         width: 100vw;
         height: 100vh;
     }
-    section p {     
-        width: 100vw;   
+
+    section p {
+        width: 100vw;
     }
 }
