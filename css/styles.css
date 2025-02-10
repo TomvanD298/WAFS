@@ -257,13 +257,12 @@ section p {
 #music {
     position: relative;
     right: -9em;
-    top: 10em;
+    display:grid;
+    place-items:center;
 }
 
 #music button {
     position: absolute; 
-    top: 11em;
-    left: 10em;
     z-index: 0;
 }
 
@@ -277,21 +276,38 @@ section p {
 
 .audio {
     position: absolute; 
-    top: 1em;
-    left: 1em;
     z-index: 0;
 }
 
-
-canvas {
+#music canvas {
     display: block;
-    margin: 20px auto;
-    /* background: #111; */
     border-radius: 50%;
     width: 600px;
     height: 600px;
-    /* filter: drop-shadow(0 0 10px #ff00ff); */
-  }
+}
+ #needle {
+    position: absolute;
+    display:grid;
+    place-items:center;
+ }
+
+
+/* #needle div:nth-of-type(1){
+    background-color: #222222;
+    width: 30em;
+    height: 2em;
+    transform: translateY(-50px);
+}
+
+#needle div:nth-of-type(2){
+    clip-path: polygon(65% 32%, 80% 39%, 86% 51%, 86% 74%, 23% 75%, 23% 32%);
+    background-color: white;
+    width: 5em;
+    height: 5em;
+    transform: translateY(50px);
+} */
+
+
 
 
 /* ------------------------------------------------------------------------------------ */
@@ -302,15 +318,36 @@ canvas {
     position: relative;
     width: 20em;
     height: 20em;
-    background-image: radial-gradient(circle at 33% 33%, var(--main-gold), black);
+    background-image: radial-gradient(circle at 33% 33%, var(--main-gold),black);
     border-radius: 50%;
-    /* filter: drop-shadow(-10px -5px 10px #ffffff); */
     display:grid;
     place-items:center;
-
     transform-style: preserve-3d;
     perspective: 40em;
 }  
+
+#dailyPlanet img {
+    position: absolute;
+    width: 40px;
+    transform-style: preserve-3d;
+    animation: superman  10s linear infinite ;
+}
+
+@keyframes superman {
+    0% {
+        transform: 
+            rotateX(0deg) 
+            rotateY(0deg) 
+            translateZ(12rem)
+    }
+    100% {
+        transform: 
+            rotateX(360deg) 
+            rotateY(360deg) 
+            translateZ(12rem)
+    }
+}
+
 
 #dailyPlanet div {
     position: absolute;
@@ -331,7 +368,6 @@ canvas {
 
 #dailyPlanet h2 {
     transform-style: preserve-3d;
-
     display:grid;
     place-items:center;
 }
@@ -483,6 +519,7 @@ canvas {
             translateZ(12rem);
     }
 }
+
 
 
 footer {
