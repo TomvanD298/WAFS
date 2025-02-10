@@ -51,9 +51,9 @@ const vinyl = document.getElementById("vinyl");
 const canvas = document.getElementById("visualizer");
 const canvasContext = canvas.getContext("2d");
 
-const audio = new Audio("audio/Highway.mp3");
+const audio = new Audio("./audio/Highway.mp3");
 audio.id = "audio";
-
+ 
 visualizeAudio();
 
 let isPlaying = false;
