@@ -11,6 +11,8 @@
 :root {
     --main-bg-color: #222222;
     --main-text-color: #ffffff;
+    --main-gold: #BBA53D;
+
   }
 
 html {
@@ -25,7 +27,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     height: 300vh;
-    color: white;
+    color: var(--main-text-color);
     font-family: MegaTrans;
 }
 
@@ -35,7 +37,7 @@ body {
     border-radius: 50%;
     width: 2px; 
     height: 2px;
-    animation: twinkle 10s infinite alternate;
+    animation: twinkle 6s infinite alternate;
     z-index: -10;
 }
 
@@ -59,6 +61,34 @@ main {
 h1{
     padding: 200px 
 }
+
+#easterEgg {
+    position: absolute;
+    bottom:-1500px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+#easterEgg:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 #result {
     display: flex;
@@ -91,6 +121,10 @@ section p {
     width: 30vw;
     margin-top: 10em;
 }
+
+/* ------------------------------------------------------------------------------------ */
+/* ----------------------------       Snowboard      ---------------------------------- */
+/* ------------------------------------------------------------------------------------ */
 
 /* ----- tutorial https://www.youtube.com/watch?v=Qz_0sSGyyE4 ----- */
 #wispo {
@@ -216,6 +250,10 @@ section p {
 
 }}
 
+/* ------------------------------------------------------------------------------------ */
+/* ----------------------------         Music        ---------------------------------- */
+/* ------------------------------------------------------------------------------------ */
+
 #music {
     position: relative;
     right: -9em;
@@ -254,16 +292,196 @@ canvas {
     height: 600px;
     /* filter: drop-shadow(0 0 10px #ff00ff); */
   }
-  
 
 
-#planet {
-    position: absolute;
+/* ------------------------------------------------------------------------------------ */
+/* ----------------------------   The Daily Planet   ---------------------------------- */
+/* ------------------------------------------------------------------------------------ */
+
+#dailyPlanet  {
+    position: relative;
     width: 20em;
     height: 20em;
-    left: 15em;
-    z-index: 0;
-    animation: rotate 30s linear infinite;
+    background-image: radial-gradient(circle at 33% 33%, var(--main-gold), black);
+    border-radius: 50%;
+    /* filter: drop-shadow(-10px -5px 10px #ffffff); */
+    display:grid;
+    place-items:center;
+
+    transform-style: preserve-3d;
+    perspective: 40em;
+}  
+
+#dailyPlanet div {
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    background-image: 
+        radial-gradient(
+            transparent 11em, 
+            var(--ring) 0 var(--ringR),
+            transparent 0 var(--ringR)
+        );
+
+    transform: 
+        rotateX(70deg)
+        translateZ( var(--tZ, 0) );
+    border-radius: 50%;
+}
+
+#dailyPlanet h2 {
+    transform-style: preserve-3d;
+
+    display:grid;
+    place-items:center;
+}
+
+#dailyPlanet div:nth-child(1) {
+    --tZ:.2em;
+    --ring:var(--main-gold);
+    --ringR:12.3em;
+}
+#dailyPlanet div:nth-child(2) {
+    --tZ:.1em;
+    --ring:var(--main-gold);
+    --ringR:12.4em;
+}
+#dailyPlanet div:nth-child(3) {
+    --ring:var(--main-gold);
+    --ringR:12.5em;
+}
+#dailyPlanet div:nth-child(4) {
+    --tZ:-.1em;
+    --ring:var(--main-gold);
+    --ringR:12.4em;
+}
+#dailyPlanet div:nth-child(5) {
+    --tZ:-.2em;
+    --ring:var(--main-gold);
+    --ringR:12.3em;
+}
+
+#dailyPlanet span{
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    animation: textOrbit 50s linear infinite;
+    box-shadow: black;
+}
+
+#dailyPlanet span:nth-child(1) {
+    animation-delay: -40s;
+}
+#dailyPlanet span:nth-child(2) {
+    animation-delay: -39s;
+}
+#dailyPlanet span:nth-child(3) {
+    animation-delay: -38s;
+}
+#dailyPlanet span:nth-child(4) {
+    animation-delay: -37s;
+}
+#dailyPlanet span:nth-child(5) {
+    animation-delay: -36s;
+}
+#dailyPlanet span:nth-child(6) {
+    animation-delay: -35s;
+}
+#dailyPlanet span:nth-child(7) {
+    animation-delay: -34s;
+}
+#dailyPlanet span:nth-child(8) {
+    animation-delay: -33s;
+}
+#dailyPlanet span:nth-child(9) {
+    animation-delay: -32s;
+}
+#dailyPlanet span:nth-child(10) {
+    animation-delay: -31s;
+}
+#dailyPlanet span:nth-child(11) {
+    animation-delay: -30s;
+}   
+#dailyPlanet span:nth-child(12) {
+    animation-delay: -29s;
+}   
+#dailyPlanet span:nth-child(13) {
+    animation-delay: -28s;
+}   
+#dailyPlanet span:nth-child(14) {
+    animation-delay: -27s;
+}  
+#dailyPlanet span:nth-child(15) {
+    animation-delay: -26s;
+}  
+#dailyPlanet span:nth-child(16) {
+    animation-delay: -25s;
+}  
+#dailyPlanet span:nth-child(17) {
+    animation-delay: -16s;
+}
+#dailyPlanet span:nth-child(18) {
+    animation-delay: -15s;
+}
+#dailyPlanet span:nth-child(19) {
+    animation-delay: -14s;
+}
+#dailyPlanet span:nth-child(20) {
+    animation-delay: -13s;
+}
+#dailyPlanet span:nth-child(21) {
+    animation-delay: -12s;
+}
+#dailyPlanet span:nth-child(22) {
+    animation-delay: -11s;
+}
+#dailyPlanet span:nth-child(23) {
+    animation-delay: -10s;
+}
+#dailyPlanet span:nth-child(24) {
+    animation-delay: -9s;
+}
+#dailyPlanet span:nth-child(25) {
+    animation-delay: -8s;
+}
+#dailyPlanet span:nth-child(26) {
+    animation-delay: -7s;
+}
+#dailyPlanet span:nth-child(27) {
+    animation-delay: -6s;
+}   
+#dailyPlanet span:nth-child(28) {
+    animation-delay: -5s;
+}   
+#dailyPlanet span:nth-child(29) {
+    animation-delay: -4s;
+}   
+#dailyPlanet span:nth-child(30) {
+    animation-delay: -3s;
+}  
+#dailyPlanet span:nth-child(31) {
+    animation-delay: -2s;
+}  
+#dailyPlanet span:nth-child(32) {
+    animation-delay: -1s;
+}  
+
+
+@keyframes textOrbit {
+    0% {
+        transform: 
+            translateY(-1.3rem)
+            rotateX(-20deg)
+            rotateY(0deg)
+            translateZ(12rem);
+    }
+    100% {
+        transform: 
+            translateY(-1.3rem)
+            rotateX(-20deg)
+            rotateY(-360deg)
+            translateZ(12rem);
+    }
 }
 
 

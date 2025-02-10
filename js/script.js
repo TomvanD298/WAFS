@@ -1,24 +1,33 @@
 /// ------ Play the music ------ ///
 
 const playButton = document.getElementById("playButton");
+const easterEgg = document.getElementById("easterEgg");
 const vinyl = document.getElementById("vinyl");
 const canvas = document.getElementById("visualizer");
 const canvasContext = canvas.getContext("2d");
 
 const audio = new Audio("./audio/Highway.mp3");
-audio.id = "audio";
- 
+const eaAudio = new Audio("./audio/Great.mp3");
+
+
+let current = audio;
+
+easterEgg.addEventListener("click", () => {
+current = eaAudio;
+console.log("liedje geswapt");
+});
 
 let isPlaying = false;
 
 playButton.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
+    current.pause();
     playButton.textContent = "Play";
     vinyl.classList.remove("rotate");
     console.log("speelt niet af");
   } else {
-    audio.play();
+    current.play();
     playButton.textContent = "Pause";
     vinyl.classList.add("rotate");
     console.log("speelt af");
@@ -27,6 +36,8 @@ visualizeAudio();
   }
   isPlaying = !isPlaying;
 });
+
+
 
 
 /// ------ Visualizer ------ ///
@@ -44,7 +55,7 @@ function visualizeAudio() {
     analyser = audioContext.createAnalyser();
 
     // Ensure the audio source is connected only once
-    source = audioContext.createMediaElementSource(audio);
+    source = audioContext.createMediaElementSource(current);
     source.connect(analyser);
     analyser.connect(audioContext.destination);
     analyser.fftSize = 256;
