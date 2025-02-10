@@ -46,11 +46,13 @@ for (let i = 0; i < numberOfStars; i++) {
 
 /// ------ Muziek afspelen ------ ///
 
-const audio = document.getElementById("audio");
 const playButton = document.getElementById("playButton");
 const vinyl = document.getElementById("vinyl");
 const canvas = document.getElementById("visualizer");
 const canvasContext = canvas.getContext("2d");
+
+const audio = new Audio("../audio/Highway.mp3"); // Geef hier het pad naar je bestand
+audio.id = "audio";
 
 visualizeAudio();
 
