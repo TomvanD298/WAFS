@@ -1,134 +1,235 @@
 <!DOCTYPE html>
 <html lang="nl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tom van Droffelaar</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/loader.css">
-</head>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon.ico" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="stars"></div>
-        <!-- <div class="loader"> 
-                <div class="rocket"></div>  
-                <div class="break"></div>
-                <p>Loading</p>
-                <span class="dots"></span>
-            </div> -->
-
+      <div class="stars"></div>
     </header>
 
     <main>
-        <img class="easterEgg" src="imgs/ea.png" alt="easter egg">
-        <div class="hide">
+     
+       
+
+          <img class="easterEgg" src="imgs/ea.png" alt="easter egg" />
+          <div class="hide">
             <p>Iets met een Guilty pleasure?</p>
             <p>Maar ik zeg niet wat :)</p>
-        </div>
-        <div id="result">
-            <template>
-                {% for person in persons %}
-                <h2>{{ person.name }}</h2>
-                <!-- <h3>{{ person.nickname }}</h3>
-                <p>{{ person.birthdate | date: '%d-%m-%Y'}}</p>
+          </div>
 
-                <img src="{{ person.avatar }}" alt="{{ person.name }}"> -->
-                {% endfor %}
-            </template>
-        </div>
+          <!-- For the rotating text i used AI to create the path and circular motion. -->
+          <!-- Promtp: Put text in a circle path in css -->
+          <!-- Prompt2: nu wil ik aan de andere kant van de cirkel {{ person.nickname }} hebben, dus 2 texten -->
+          <div id="result"><template>
+            {% for person in persons %}
+          <section id="intro">
+            <div class="container">
+              <svg class="text-circle" viewBox="0 0 300 300">
+                <path
+                  id="circle-path"
+                  d="M 150,150 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"
+                  fill="none"
+                  stroke="#ddd"
+                  stroke-width="0"
+                />
+                <text>
+                  <textPath href="#circle-path" startOffset="0">
+                    {{ person.name }}
+                  </textPath>
+                </text>
 
-        <section>
+                <text>
+                  <textPath href="#circle-path" startOffset="70%">
+                    {{ person.nickname }}
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            <img src="{{ person.avatar }}" alt="{{ person.name }}" />
+          </section>
+
+          {% endfor %}
+        </template>
+      </div>
+
+          <section>
             <div id="wispo">
-                <img class="snowPlanet" src="imgs/Snow.png" alt="Snow">
-                <div class="snowboard"></div>
-                <div class="snowboard"></div>
-                <div class="snowboard"></div>
-                <div class="snowboard"></div>
-                <div class="snowboard"></div>
+              <img class="snowPlanet" src="imgs/Snow.png" alt="Snow" />
+              <div class="snowboard"></div>
+              <div class="snowboard"></div>
+              <div class="snowboard"></div>
+              <div class="snowboard"></div>
+              <div class="snowboard"></div>
             </div>
-            <p>Hoi ik ben tom en ik woon in Roemenië</p>
-        </section>
+            <p>hoi dit is een test stukje</p>
+          </section>
 
-        <section>
-            <p>Hoi ik ben tom en ik woon in Roemenië</p>
+          <section>
+            <p>hoi dit is een test stukje</p>
             <div id="music">
-                <img id="vinyl" src="imgs/vinyl.png" alt="Vinyl">
-                <button id="playButton">Play</button>
-                <audio>
-                    <source src="audio/Highway.mp3" type="audio/mpeg">
-                </audio>
-                <canvas id="visualizer"></canvas>
-                <div id="needle">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+              <img id="vinyl" src="imgs/vinyl.png" alt="Vinyl" />
+              <button id="playButton" class="zero"></button>
+              <audio>
+                <source src="audio/Highway.mp3" type="audio/mpeg" />
+              </audio>
+              <canvas id="visualizer"></canvas>
+
+              <div id="needle">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             </div>
+          </section>
 
-        </section>
 
-        <section>
+          <!-- Deze onderdeeltje is samen gemaakt met mnr hooft -->
+          <section>
             <div id="dailyPlanet">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <img src="imgs/superman.png" alt="Superman">
-                <img src="imgs/spiderman.png" alt="Spiderman">
-                <h2>
-                    <span>t</span>
-                    <span>h</span>
-                    <span>e</span>
-                    <span> </span>
-                    <span>d</span>
-                    <span>a</span>
-                    <span>i</span>
-                    <span>l</span>
-                    <span>y</span>
-                    <span> </span>
-                    <span>p</span>
-                    <span>l</span>
-                    <span>a</span>
-                    <span>n</span>
-                    <span>e</span>
-                    <span>t</span>
-                    <span></span>
-                    <span>t</span>
-                    <span>h</span>
-                    <span>e</span>
-                    <span> </span>
-                    <span>d</span>
-                    <span>a</span>
-                    <span>i</span>
-                    <span>l</span>
-                    <span>y</span>
-                    <span> </span>
-                    <span>b</span>
-                    <span>u</span>
-                    <span>g</span>
-                    <span>l</span>
-                    <span>e</span>
-                    <span></span>
-                </h2>
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+
+              <img src="imgs/superman.png" alt="Superman" />
+              <img src="imgs/spiderman.png" alt="Spiderman" />
+              <img src="imgs/tieFighter.png" alt="Tie Fighter" />
+              <img src="imgs/flash.png" alt="The Flash" />
+
+              <h2>
+                <span>t</span>
+                <span>h</span>
+                <span>e</span>
+                <span> </span>
+                <span>d</span>
+                <span>a</span>
+                <span>i</span>
+                <span>l</span>
+                <span>y</span>
+                <span> </span>
+                <span>p</span>
+                <span>l</span>
+                <span>a</span>
+                <span>n</span>
+                <span>e</span>
+                <span>t</span>
+                <span></span>
+                <span>t</span>
+                <span>h</span>
+                <span>e</span>
+                <span> </span>
+                <span>d</span>
+                <span>a</span>
+                <span>i</span>
+                <span>l</span>
+                <span>y</span>
+                <span> </span>
+                <span>b</span>
+                <span>u</span>
+                <span>g</span>
+                <span>l</span>
+                <span>e</span>
+                <span></span>
+              </h2>
+            </div>
+            <p>hoi dit is een test stukje</p>
+          </section>
+
+          <section>
+            <div class="pizza"> 
+              <div id="pizzaBorder"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="pizza"> 
+              <div id="pizzaBorder"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="pizza"> 
+              <div id="pizzaBorder"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="pizza"> 
+              <div id="pizzaBorder"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <div class="peperoni"></div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
 
-        </section>
-
+            <div class="pizzaShadow"></div>
+            <div class="pizzaShadow"></div>
+            <div class="pizzaShadow"></div>
+            <div class="pizzaShadow"></div>
+          </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2025 - Tom van Droffelaar</p>
+      <p>&copy; 2025 - Tom van Droffelaar</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.min.js"></script>
     <script type="module" src="./js/script.js"></script>
-    <script type="module" src="./js/loader.js"></script>
+    <script type="module" src="./js/stars.js"></script>
     <script type="module" src="./js/api.js"></script>
-</body>
-
+  </body>
 </html>

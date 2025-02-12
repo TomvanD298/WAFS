@@ -1,56 +1,79 @@
 /// ------ Play the music ------ ///
-
 const playButton = document.getElementById("playButton");
 const easterEgg = document.querySelector(".easterEgg");
 const vinyl = document.getElementById("vinyl");
-const needle = document.getElementById("needle")
+const needle = document.getElementById("needle");
 const canvas = document.getElementById("visualizer");
 const canvasContext = canvas.getContext("2d");
 
 const highwayAudio = new Audio("./audio/Highway.mp3");
 const eaAudio = new Audio("./audio/Great.mp3");
+let current = highwayAudio;
 
 const vinylImg = document.getElementById("vinyl");
 
+let isPlaying = false;
+let audioContext;
+let analyser;
+let sourceNodes = new Map(); 
 
-let current = highwayAudio;
+function setupAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioContext.createAnalyser();
+    analyser.fftSize = 256;
+  }
+
+  if (!sourceNodes.has(current)) {
+    const sourceNode = audioContext.createMediaElementSource(current);
+    sourceNode.connect(analyser);
+    analyser.connect(audioContext.destination);
+    sourceNodes.set(current, sourceNode); 
+  }
+}
+
+//Easteregg swap song
 
 easterEgg.addEventListener("click", () => {
-  if (current == eaAudio) {
+  if (current === eaAudio) {
+    current.pause();  
     current = highwayAudio;
     vinylImg.src = "../imgs/vinyl.png";
-    console.log("Highway");
   } else {
+    current.pause();  
     current = eaAudio;
     vinylImg.src = "../imgs/show.png";
-    console.log("Show");
+  }
+
+  if (isPlaying) {
+    current.play();
+    visualizeAudio();
   }
 });
 
-let isPlaying = false;
+//Click on the button to play or pause the song
 
 playButton.addEventListener("click", () => {
   if (isPlaying) {
-    highwayAudio.pause();
-    eaAudio.pause();
-    playButton.textContent = "Play";
+    current.pause();
+    playButton.classList.remove("pause");
+    playButton.classList.add("play");
     vinyl.classList.remove("rotate");
     needle.classList.remove("needleDrop");
     needle.classList.add("needleUp");
-    console.log("speelt niet af");
   } else {
+    setupAudioContext();
     current.play();
-    playButton.textContent = "Pause";
+    playButton.classList.remove("play");
+    playButton.classList.remove("zero");
+    playButton.classList.add("pause");
     vinyl.classList.add("rotate");
     needle.classList.remove("needleUp");
     needle.classList.add("needleDrop");
-    console.log("speelt af");
     visualizeAudio();
-
   }
   isPlaying = !isPlaying;
 });
-
 
 
 
@@ -59,37 +82,9 @@ playButton.addEventListener("click", () => {
 /// ------ (I uploaded the code above in GPT) 
 ///  Prompt: is het moeilijk om een audio visualizer hierbij te maken? ------ ///
 
-let audioContext;
-let analyser;
-let source;
-
-
-
 function visualizeAudio() {
-  if (!audioContext) {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = audioContext.createAnalyser();
-
-    // Ensure the audio source is connected only once
-    source = audioContext.createMediaElementSource(current);
-    source.connect(analyser);
-    analyser.connect(audioContext.destination);
-    analyser.fftSize = 256;
-  }
-
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
-
-  let lightBlue = 'rgb(32, 203, 229)';
-  let lightRed = 'rgb(159, 32, 37)';
-
-  let currentColor
-
-  if(current = highwayAudio ) {
-    currentColor = lightRed
-  } else {
-    currentColor = lightBlue
-  }
 
   function draw() {
     canvas.width = canvas.clientWidth;
@@ -115,8 +110,8 @@ function visualizeAudio() {
       canvasContext.beginPath();
       canvasContext.moveTo(xStart, yStart);
       canvasContext.lineTo(xEnd, yEnd);
-      canvasContext.strokeStyle = lightRed;
-      canvasContext.lineWidth = 7;
+      canvasContext.strokeStyle =`hsl(${(i / bufferLength) * 360}, 100%, 50%)`; 
+      canvasContext.lineWidth = 10;
       canvasContext.stroke();
     }
 
