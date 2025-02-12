@@ -17,7 +17,7 @@
   --main-bg-color: #222222;
   --main-text-color: #ffffff;
   --olive-green: #636b2f;
-  --cmd-yellow:#fdf257;
+  --cmd-yellow: #fdf257;
 
   --main-gold: #bba53d;
   --daily-bugle: #d83f3f;
@@ -117,8 +117,9 @@ h1 {
   position: absolute;
   bottom: -1300px;
   right: 10px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  aspect-ratio: 1;
+  transform: rotate(20deg);
 }
 
 .hide {
@@ -130,7 +131,7 @@ h1 {
 
 .easterEgg:hover + .hide {
   display: block;
-  animation: shake 1s infinite;
+  animation: shake 2s infinite;
 }
 
 @keyframes shake {
@@ -197,6 +198,15 @@ h1 {
   z-index: -1;
 }
 
+#intro p {
+  position: absolute;
+  width: 25%;
+  right: 10%;
+  top: 5em;
+  transform: rotate(-10deg);
+  animation: pulse 2s ease-in-out infinite;
+}
+
 template {
   display: flex;
 }
@@ -210,9 +220,9 @@ section {
   align-items: center;
 }
 
-section p{
-    margin-top: auto;
-    margin-bottom: auto;
+section p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .container {
@@ -246,6 +256,18 @@ text:nth-of-type(2) {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
   }
 }
 
@@ -304,6 +326,16 @@ text:nth-of-type(2) {
   animation-delay: -12s;
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes hover {
   0% {
     top: 0px;
@@ -315,16 +347,6 @@ text:nth-of-type(2) {
 
   100% {
     top: 0px;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }
 
@@ -388,8 +410,8 @@ text:nth-of-type(2) {
 }
 
 section:nth-of-type(1) abbr {
-    color: var(--cmd-yellow);
-    text-transform: uppercase;
+  color: var(--cmd-yellow);
+  text-transform: uppercase;
 }
 
 /* ------------------------------------------------------------------------------------ */
@@ -846,9 +868,8 @@ section:nth-of-type(1) abbr {
 }
 
 #hobbies p {
-font-size: 3em;
+  font-size: 3em;
 }
-
 
 /* ------------------------------------------------------------------------------------ */
 /* ----------------------------        Pizza         ---------------------------------- */
@@ -1016,7 +1037,7 @@ section:nth-of-type(4) {
 
 footer {
   text-align: center;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   bottom: 0;
   color: var(--main-text-color);
@@ -1034,20 +1055,54 @@ footer {
 
 @media only screen and (max-width: 600px) {
   body {
-    height: 200vh;
+    overflow-x: hidden;
   }
 
   section {
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    flex-wrap: wrap;
+    width: 90vw;
   }
-
   section p {
     width: 100vw;
   }
-}
 
-  
-  
-  
+  #hobbies p {
+    font-size: 2em;
+  }
+
+  #intro {
+    margin: 5em auto 0 auto;
+    scale: 0.8;
+  }
+
+  #intro p {
+    width: 10em;
+    left: 1em;
+    top: -5em;
+  }
+
+  .easterEgg {
+    bottom: -1150px;
+  }
+
+  #wispo {
+    scale: 0.6;
+  }
+
+  #music {
+    scale: 0.6;
+    right: 10em;
+  }
+
+  #dailyPlanet {
+    scale: 0.6;
+  }
+
+  .pizza {
+    scale: 0.4;
+  }
+
+  .pizzaShadow {
+    scale: 0.4;
+  }
+}
