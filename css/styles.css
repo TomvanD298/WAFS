@@ -101,10 +101,6 @@ body {
   }
 }
 
-/* main {
-  padding: 0% 15% 0 15%;
-} */
-
 h1 {
   padding: 200px;
 }
@@ -115,11 +111,12 @@ h1 {
 
 .easterEgg {
   position: absolute;
-  bottom: -1300px;
+  bottom: -1325px;
   right: 10px;
   width: 30px;
   aspect-ratio: 1;
   transform: rotate(20deg);
+  z-index: 2;
 }
 
 .hide {
@@ -224,6 +221,7 @@ section {
 section p {
   margin-top: auto;
   margin-bottom: auto;
+  font-size: 1.5em;
 }
 
 .container {
@@ -263,12 +261,15 @@ text:nth-of-type(2) {
 @keyframes pulse {
   0% {
     scale: 1;
+    transform: rotate(0deg);
   }
   50% {
     scale: 1.2;
+    transform: rotate(-2deg);
   }
   100% {
     scale: 1;
+    transform: rotate(0deg);
   }
 }
 
@@ -455,8 +456,8 @@ section:nth-of-type(1) abbr {
 
 #vinyl {
   position: absolute;
-  width: 20em;
-  height: 20em;
+  width: 22em;
+  height: 22em;
   z-index: 0;
 }
 
@@ -478,8 +479,8 @@ section:nth-of-type(1) abbr {
   place-items: center;
   transform-style: preserve-3d;
   transform-origin: top;
-  right: 5em;
-  top: 1em;
+  right: 3em;
+  top: 3em;
   transform: rotate(-90deg);
 }
 
@@ -974,7 +975,7 @@ section:nth-of-type(4) {
   width: 3px;
   height: 22em;
   background-color: var(--pizza-black);
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: 3;
 }
 .pizza span:nth-last-of-type(2) {
@@ -994,8 +995,7 @@ section:nth-of-type(4) {
   height: 1em;
   width: 15em;
   border-radius: 50%;
-  opacity: 30%;
-  background-color: black;
+  background: radial-gradient(circle, rgba(0,0,0,0.7301514355742297) 60%, rgba(0,0,0,0) 100%);
   display: grid;
   place-items: center;
   align-items: center;
@@ -1060,15 +1060,33 @@ footer {
   }
 
   section {
-    flex-wrap: wrap;
-    width: 100vw;
+    display: block;
+    width: 90vw;
+    padding: 0 5vw 0 0;
   }
+  
   section p {
-    width: 80vw;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
   }
 
+  #hobbies {
+    margin-top: -4em;
+    width: 80%;
+    
+  }
+  #hobbies h2 {
+    width: 90vw;
+    margin-left: 5vw;
+    text-align: center;
+  }
   #hobbies p {
     font-size: 2em;
+    width: 90vw;
+    margin-left: 5vw;
+    text-align: center;
   }
 
   #intro {
@@ -1077,22 +1095,26 @@ footer {
   }
 
   #intro p {
-    width: 10em;
-    left: 3em;
-    top: -11em;
+    width:50%;
+    right: 50%;
+    top: -12em;
   }
 
   .easterEgg {
-    bottom: -1150px;
+    bottom: -1250px;
   }
 
   #wispo {
     scale: 0.6;
-    margin-left: -2em;
+    margin-left: 1em;
   }
 
-  section:nth-of-type(1){
+  section:nth-of-type(1) {
     margin-top: -5em;
+  }
+
+  section p {
+    margin-left: 5vw;
   }
   section:nth-of-type(1) p {
     margin-bottom: 2em;
@@ -1100,20 +1122,56 @@ footer {
 
   #music {
     scale: 0.6;
-    right: 11em;
+    right: 0;
+  }
+
+  #music canvas{
+   margin-left: -8.5em;
+  }
+
+  #music #needle {
+    right: -3em;
   }
 
   #dailyPlanet {
     scale: 0.6;
-    margin-top: -10em;
-    margin-left: -2em
+    margin-top: -13em;
+    margin-left: 2em
   }
 
   .pizza {
-    scale: 0.4;
+    scale: 0.6;
+    margin-top: -10em;
+    margin-left: 8em;
+    animation: pizzaRollSmall 12s ease-out infinite;
+  }
+
+  .pizza:nth-of-type(2){
+    visibility: hidden;
+  }
+
+  .pizza:nth-of-type(3){
+    visibility: hidden;
+  }
+
+  .pizza:nth-of-type(4){
+    visibility: hidden;
   }
 
   .pizzaShadow {
-    scale: 0.4;
+    scale: 0.6;
+    margin-top: 3em;
+    margin-left: 8em;
+    animation: none;
   }
+
+  @keyframes pizzaRollSmall {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform:rotate(720deg);
+    }
+  }
+
 }

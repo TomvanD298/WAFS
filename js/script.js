@@ -38,11 +38,11 @@ easterEgg.addEventListener("click", () => {
   if (current === eaAudio) {
     current.pause();  
     current = highwayAudio;
-    vinylImg.src = "../imgs/vinyl.png";
+    vinylImg.src = "./imgs/vinyl.png";
   } else {
     current.pause();  
     current = eaAudio;
-    vinylImg.src = "../imgs/show.png";
+    vinylImg.src = "./imgs/show.png";
   }
 
   if (isPlaying) {
