@@ -188,6 +188,7 @@ h1 {
   display: grid;
   place-items: center;
   align-items: center;
+  margin: 10em 0 10em 0;
 }
 
 #intro img {
@@ -202,7 +203,7 @@ h1 {
   position: absolute;
   width: 25%;
   right: 10%;
-  top: 5em;
+  top: 0;
   transform: rotate(-10deg);
   animation: pulse 2s ease-in-out infinite;
 }
@@ -215,7 +216,7 @@ section {
   display: flex;
   justify-content: space-between;
   width: 70vw;
-  height: 50vh;
+  height: fit-content;
   padding: 0% 15% 0 15%;
   align-items: center;
 }
@@ -1060,10 +1061,10 @@ footer {
 
   section {
     flex-wrap: wrap;
-    width: 90vw;
+    width: 100vw;
   }
   section p {
-    width: 100vw;
+    width: 80vw;
   }
 
   #hobbies p {
@@ -1071,14 +1072,14 @@ footer {
   }
 
   #intro {
-    margin: 5em auto 0 auto;
+    margin: 12em 0 10em 0;
     scale: 0.8;
   }
 
   #intro p {
     width: 10em;
-    left: 1em;
-    top: -5em;
+    left: 3em;
+    top: -11em;
   }
 
   .easterEgg {
@@ -1087,15 +1088,25 @@ footer {
 
   #wispo {
     scale: 0.6;
+    margin-left: -2em;
+  }
+
+  section:nth-of-type(1){
+    margin-top: -5em;
+  }
+  section:nth-of-type(1) p {
+    margin-bottom: 2em;
   }
 
   #music {
     scale: 0.6;
-    right: 10em;
+    right: 11em;
   }
 
   #dailyPlanet {
     scale: 0.6;
+    margin-top: -10em;
+    margin-left: -2em
   }
 
   .pizza {
