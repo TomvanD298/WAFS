@@ -14,20 +14,18 @@
     </header>
 
     <main>
-     
-       
+      <img class="easterEgg" src="imgs/ea.png" alt="easter egg" />
+      <div class="hide">
+        <p>Iets met een Guilty pleasure?</p>
+        <p>Maar ik zeg niet wat :)</p>
+      </div>
 
-          <img class="easterEgg" src="imgs/ea.png" alt="easter egg" />
-          <div class="hide">
-            <p>Iets met een Guilty pleasure?</p>
-            <p>Maar ik zeg niet wat :)</p>
-          </div>
-
-          <!-- For the rotating text i used AI to create the path and circular motion. -->
-          <!-- Promtp: Put text in a circle path in css -->
-          <!-- Prompt2: nu wil ik aan de andere kant van de cirkel {{ person.nickname }} hebben, dus 2 texten -->
-          <div id="result"><template>
-            {% for person in persons %}
+      <!-- For the rotating text i used AI to create the path and circular motion. -->
+      <!-- Promtp: Put text in a circle path in css -->
+      <!-- Prompt2: nu wil ik aan de andere kant van de cirkel {{ person.nickname }} hebben, dus 2 texten -->
+      <div class="result">
+        <template>
+          {% for person in persons %}
           <section id="intro">
             <div class="container">
               <svg class="text-circle" viewBox="0 0 300 300">
@@ -58,170 +56,176 @@
         </template>
       </div>
 
-          <section>
-            <div id="wispo">
-              <img class="snowPlanet" src="imgs/Snow.png" alt="Snow" />
-              <div class="snowboard"></div>
-              <div class="snowboard"></div>
-              <div class="snowboard"></div>
-              <div class="snowboard"></div>
-              <div class="snowboard"></div>
-            </div>
-            <p>hoi dit is een test stukje</p>
-          </section>
+      <section>
+        <div id="wispo">
+          <img class="snowPlanet" src="imgs/Snow.png" alt="Snow" />
+          <div class="snowboard"></div>
+          <div class="snowboard"></div>
+          <div class="snowboard"></div>
+          <div class="snowboard"></div>
+          <div class="snowboard"></div>
+        </div>
 
-          <section>
-            <p>hoi dit is een test stukje</p>
-            <div id="music">
-              <img id="vinyl" src="imgs/vinyl.png" alt="Vinyl" />
-              <button id="playButton" class="zero"></button>
-              <audio>
-                <source src="audio/Highway.mp3" type="audio/mpeg" />
-              </audio>
-              <canvas id="visualizer"></canvas>
+        <p>
+          Hoi Ik ben Tom, 26 jaar en ik studeer
+          <abbr title="Communication and Multimedia Design">cmd</abbr> aan de
+          Hogeschool van Amsterdam
+        </p>
+      </section>
 
-              <div id="needle">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </section>
+      <section>
+        <p>Ik ga graag naar festivals en concerten. Volgs veel is mijn muzieksmaak hetelfde als ouwe lullen. Luister vaak naar AC/DC, Muse, pearl jam, metellica en nog veel meer.</p>
+        <div id="music">
+          <img id="vinyl" src="imgs/vinyl.png" alt="Vinyl" />
+          <button id="playButton" class="zero"></button>
+          <audio>
+            <source src="audio/Highway.mp3" type="audio/mpeg" />
+          </audio>
+          <canvas id="visualizer"></canvas>
 
+          <div id="needle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </section>
 
-          <!-- Deze onderdeeltje is samen gemaakt met mnr hooft -->
-          <section>
-            <div id="dailyPlanet">
-              <div class="ring"></div>
-              <div class="ring"></div>
-              <div class="ring"></div>
-              <div class="ring"></div>
-              <div class="ring"></div>
+      <!-- Deze onderdeeltje is samen gemaakt met mnr hooft -->
+      <section>
+        <div id="dailyPlanet">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
 
-              <div class="ring"></div>
-              <div class="ring"></div>
-              <div class="ring"></div>
-              <div class="ring"></div>
-              <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
 
-              <img src="imgs/superman.png" alt="Superman" />
-              <img src="imgs/spiderman.png" alt="Spiderman" />
-              <img src="imgs/tieFighter.png" alt="Tie Fighter" />
-              <img src="imgs/flash.png" alt="The Flash" />
+          <img src="imgs/superman.png" alt="Superman" />
+          <img src="imgs/spiderman.png" alt="Spiderman" />
+          <img src="imgs/tieFighter.png" alt="Tie Fighter" />
+          <img src="imgs/flash.png" alt="The Flash" />
 
-              <h2>
-                <span>t</span>
-                <span>h</span>
-                <span>e</span>
-                <span> </span>
-                <span>d</span>
-                <span>a</span>
-                <span>i</span>
-                <span>l</span>
-                <span>y</span>
-                <span> </span>
-                <span>p</span>
-                <span>l</span>
-                <span>a</span>
-                <span>n</span>
-                <span>e</span>
-                <span>t</span>
-                <span></span>
-                <span>t</span>
-                <span>h</span>
-                <span>e</span>
-                <span> </span>
-                <span>d</span>
-                <span>a</span>
-                <span>i</span>
-                <span>l</span>
-                <span>y</span>
-                <span> </span>
-                <span>b</span>
-                <span>u</span>
-                <span>g</span>
-                <span>l</span>
-                <span>e</span>
-                <span></span>
-              </h2>
-            </div>
-            <p>hoi dit is een test stukje</p>
-          </section>
+          <h2>
+            <span>t</span>
+            <span>h</span>
+            <span>e</span>
+            <span> </span>
+            <span>d</span>
+            <span>a</span>
+            <span>i</span>
+            <span>l</span>
+            <span>y</span>
+            <span> </span>
+            <span>p</span>
+            <span>l</span>
+            <span>a</span>
+            <span>n</span>
+            <span>e</span>
+            <span>t</span>
+            <span></span>
+            <span>t</span>
+            <span>h</span>
+            <span>e</span>
+            <span> </span>
+            <span>d</span>
+            <span>a</span>
+            <span>i</span>
+            <span>l</span>
+            <span>y</span>
+            <span> </span>
+            <span>b</span>
+            <span>u</span>
+            <span>g</span>
+            <span>l</span>
+            <span>e</span>
+            <span></span>
+          </h2>
+        </div>
+        <div id="hobbies">
+          <h2>Dit zijn mijn hobbies</h2>
+          <p>🎮 🍕 🎞️ 🍿 💻 📷</p>
+        </div>
+      </section>
 
-          <section>
-            <div class="pizza"> 
-              <div id="pizzaBorder"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="pizza"> 
-              <div id="pizzaBorder"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="pizza"> 
-              <div id="pizzaBorder"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="pizza"> 
-              <div id="pizzaBorder"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <div class="peperoni"></div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+      <section>
+        <div class="pizza">
+          <div id="pizzaBorder"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="pizza">
+          <div id="pizzaBorder"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="pizza">
+          <div id="pizzaBorder"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="pizza">
+          <div id="pizzaBorder"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <div class="peperoni"></div>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-            <div class="pizzaShadow"></div>
-            <div class="pizzaShadow"></div>
-            <div class="pizzaShadow"></div>
-            <div class="pizzaShadow"></div>
-          </section>
-
+        <div class="pizzaShadow"></div>
+        <div class="pizzaShadow"></div>
+        <div class="pizzaShadow"></div>
+        <div class="pizzaShadow"></div>
+      </section>
     </main>
 
     <footer>

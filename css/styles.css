@@ -17,6 +17,7 @@
   --main-bg-color: #222222;
   --main-text-color: #ffffff;
   --olive-green: #636b2f;
+  --cmd-yellow:#fdf257;
 
   --main-gold: #bba53d;
   --daily-bugle: #d83f3f;
@@ -54,12 +55,11 @@ html {
 
 body {
   background: linear-gradient(45deg, #141457, #03412d, #0e2349);
-  background-size: 1000% 1000%;
+  background-size: 300% 300%;
   animation: gradientPulse 20s ease infinite;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  height: 300vh;
   width: 100vw;
   color: var(--main-text-color);
   font-family: MegaTrans;
@@ -115,7 +115,7 @@ h1 {
 
 .easterEgg {
   position: absolute;
-  bottom: -1500px;
+  bottom: -1300px;
   right: 10px;
   width: 20px;
   height: 20px;
@@ -124,7 +124,7 @@ h1 {
 .hide {
   position: absolute;
   display: none;
-  bottom: -1450px;
+  bottom: -1270px;
   right: 20px;
 }
 
@@ -176,7 +176,7 @@ h1 {
   }
 }
 
-#result {
+.result {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,8 +205,14 @@ section {
   display: flex;
   justify-content: space-between;
   width: 70vw;
-  height: 60vh;
+  height: 50vh;
   padding: 0% 15% 0 15%;
+  align-items: center;
+}
+
+section p{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .container {
@@ -255,15 +261,13 @@ text:nth-of-type(2) {
 }
 
 .snowPlanet {
-  position: absolute;
+  /* position: absolute; */
   width: 25em;
   height: 25em;
   background-image: url(../imgs/Snow.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* -webkit-filter: drop-shadow(-5px -5px 5px  #03d2ee); 
-    filter: drop-shadow(-5px -5px 5px  #06f7ff); */
   animation: rotateBack 30s linear infinite;
 }
 
@@ -277,7 +281,7 @@ text:nth-of-type(2) {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  margin-top: 80px;
+  margin-top: -20em;
   left: -5em;
   border-radius: 60px;
   animation: orbit 15s ease-in-out infinite;
@@ -381,6 +385,11 @@ text:nth-of-type(2) {
     z-index: 1;
     transform: scaleX(0.1);
   }
+}
+
+section:nth-of-type(1) abbr {
+    color: var(--cmd-yellow);
+    text-transform: uppercase;
 }
 
 /* ------------------------------------------------------------------------------------ */
@@ -681,42 +690,6 @@ text:nth-of-type(2) {
   --ringR: 12.3em;
 }
 
-/* #dailyPlanet .ring:nth-of-type(6) {
-    --tZ: -.1em;
-    --ring: #212121;
-    --ringR: 11.3em;
-}
-#dailyPlanet .ring:nth-of-type(7) {
-    --tZ: -.2em;
-    --ring: #121212;
-    --ringR: 11.3em;
-}
-#dailyPlanet .ring:nth-of-type(8) {
-    --tZ: -.3em;
-    --ring: #000000;
-    --ringR: 10.3em;
-}
-#dailyPlanet .ring:nth-of-type(9) {
-    --tZ: -.4em;
-    --ring: #121212;
-    --ringR: 10.3em;
-}
-#dailyPlanet .ring:nth-of-type(10) {
-    --tZ: -.5em;
-    --ring: #212121;
-    --ringR: 11.3em;
-} */
-
-/* .deathstarRing:nth-child(1) {
-    position: absolute;
-    width: 20em;
-    height: 2em;
-    border-radius: 2px;
-    background-color: #323232;
-    background-image: none;
-    transform: none;
-} */
-
 #dailyPlanet span {
   position: absolute;
   text-transform: uppercase;
@@ -872,6 +845,11 @@ text:nth-of-type(2) {
   }
 }
 
+#hobbies p {
+font-size: 3em;
+}
+
+
 /* ------------------------------------------------------------------------------------ */
 /* ----------------------------        Pizza         ---------------------------------- */
 /* ------------------------------------------------------------------------------------ */
@@ -992,16 +970,17 @@ section:nth-of-type(4) {
 .pizzaShadow {
   position: absolute;
   height: 1em;
-  width: 10em;
+  width: 15em;
   border-radius: 50%;
   opacity: 30%;
   background-color: black;
   display: grid;
   place-items: center;
   align-items: center;
-  left: -20px;
-  margin-top: 21em;
+  left: -60px;
+  margin-top: 22em;
   animation: pizzaShadow 12s ease-out infinite;
+  z-index: -1;
 }
 
 .pizzaShadow:nth-last-of-type(2) {
@@ -1044,8 +1023,8 @@ footer {
   font-family: "Andromeda";
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8.9px);
-  -webkit-backdrop-filter: blur(8.9px);
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
   z-index: 99;
 }
 
@@ -1068,3 +1047,7 @@ footer {
     width: 100vw;
   }
 }
+
+  
+  
+  
